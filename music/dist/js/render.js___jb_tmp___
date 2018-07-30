@@ -1,0 +1,19 @@
+//实现渲染
+(function ($,root) {
+    // renderInderInfo(data[0])
+    var $scope = $(document.body);
+    function renderInderInfo(info) {
+        var html = '<div class=\"song-name\">'+info.song+'</div>' +
+                    '<div class=\"singer-name\">'+info.singer+'</div>'+
+                    '<div class=\"album-name\">'+info.album+'</div>'
+        $scope.find(".song-info").html(html);
+    }
+    function renderImage() {
+
+    }
+    root.render = function () {
+        renderInderInfo(data[0]);
+        renderImage();
+    }
+})(window.Zepto,window.player ||{});
+//通过window.player暴露函数
